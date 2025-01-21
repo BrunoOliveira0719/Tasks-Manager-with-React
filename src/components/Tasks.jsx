@@ -16,7 +16,7 @@ function Tasks(props) {
             {props.tasks.map((task) => (
                 <li key={task.id} className="flex gap-2">
                     <button onClick={() => props.onTaskCheck(task.id)} 
-                    className={`bg-slate-400 text-white p-2 rounded-md w-full text-left ${task.isCompleted && 'line-through'}`}>
+                    className={`bg-slate-400 text-black p-2 rounded-md w-full text-left ${task.isCompleted && 'line-through'}`}>
                         {task.title}
                         </button>
                     <button onClick={() => onSeeDetailsClick(task)} className="bg-slate-400 text-white p-2 rounded-md">
