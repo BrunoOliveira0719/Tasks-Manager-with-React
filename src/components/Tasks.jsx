@@ -1,4 +1,4 @@
-import { ChevronRightIcon, Trash2Icon } from "lucide-react"
+import { ChevronRightIcon, PenIcon, Trash2Icon } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
 function Tasks(props) {
@@ -9,7 +9,12 @@ function Tasks(props) {
         query.set("title", task.title);
         query.set("description", task.description);
         navgate(`/details_task?${query.toString()}`);
-    }
+    };
+
+    function seeUpdateTaskClick(task) {
+        const query = new URLSearchParams({data: JSON.stringify(task)});
+        navgate(`/update_task?${query.toString()}`);
+    };
 
     return (
         <ul className="space-y-3 p-6 bg-slate-500 rounded-md shadow">
@@ -21,6 +26,9 @@ function Tasks(props) {
                         </button>
                     <button onClick={() => onSeeDetailsClick(task)} className="bg-slate-400 text-white p-2 rounded-md">
                     <ChevronRightIcon />
+                    </button>
+                    <button onClick={() => seeUpdateTaskClick(task)} className="bg-slate-400 text-white p-2 rounded-md">
+                    <PenIcon />
                     </button>
                     <button onClick={() => props.onDeleteTaskClick(task.id)} className="bg-slate-400 text-white p-2 rounded-md">
                     <Trash2Icon />

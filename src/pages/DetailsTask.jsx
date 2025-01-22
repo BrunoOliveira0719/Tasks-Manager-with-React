@@ -1,4 +1,5 @@
 import { Undo2 } from "lucide-react";
+import H1 from "../components/H1";
 import { useNavigate, useSearchParams } from "react-router-dom"
 
 function DetailsTask() {
@@ -18,7 +19,7 @@ function DetailsTask() {
             </div>
 
             <div className="bg-slate-500 flex flex-col p-6 rounded-md">
-                <h1 className="font-bold text-xl text-white">Title: {title}</h1>
+                <H1 />Title: {title}
                 <p className="font-bold text-white">Description: {description}</p>
             </div>
         </div>

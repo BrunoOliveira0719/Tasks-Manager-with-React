@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CreateTasks from "./components/CreateTasks";
-import Tasks from "./components/tasks";
+import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
 
 function App() {
@@ -10,16 +10,16 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(tasks))
   }, [tasks]);
 
-  useEffect(() => {
-    const fetchTasks = async () => {
-      const response = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=10", {method: "GET"});
-      const data = await response.json();
+  // useEffect(() => {
+  //   const fetchTasks = async () => {
+  //     const response = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=10", {method: "GET"});
+  //     const data = await response.json();
 
-      setTasks(data);
-    }
+  //     setTasks(data);
+  //   }
 
-    //fetchTasks(); If you want call API to get tasks
-  }, []);
+  //   fetchTasks(); //If you want call API to get tasks
+  // }, []);
 
   function onTaskCheck(tasksId) {
     const newTasks = tasks.map(task => {
@@ -30,7 +30,7 @@ function App() {
       return task;
     })
     setTasks(newTasks);
-  }
+  };
 
   function onDeleteTaskClick(taskId) {
     const newTasks = tasks.filter(task => task.id !== taskId);
@@ -43,9 +43,9 @@ function App() {
     };
     setTasks([...tasks, newTasks]);
   }
-
+  
   return <div className="w-screen h-screen bg-slate-700 flex justify-center p-6">
-    <div className="w-[30%] space-y-4">
+    <div className="w-[35%] space-y-4">
       <h1 className="text-white font-bold text-center">
         Tasks Manager
       </h1>
