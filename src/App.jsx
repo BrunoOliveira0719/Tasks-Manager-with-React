@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CreateTasks from "./components/CreateTasks";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
+import TitleMain from "./components/TitleMain";
 
 function App() {
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || []);
@@ -46,9 +47,7 @@ function App() {
   
   return <div className="w-screen h-screen bg-slate-700 flex justify-center p-6">
     <div className="w-[35%] space-y-4">
-      <h1 className="text-white font-bold text-center">
-        Tasks Manager
-      </h1>
+      <TitleMain>Tasks Manager</TitleMain>
       <CreateTasks onCreateTaskSubmit={onCreateTaskSubmit}/>
       <Tasks tasks={tasks} onTaskCheck={onTaskCheck} onDeleteTaskClick={onDeleteTaskClick}/>
     </div>

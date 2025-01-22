@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 import Input from "../components/input";
 import H1 from "../components/H1";
 import { useState } from "react";
+import TitleMain from "../components/TitleMain";
 
 function UpdateTask() {
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ function UpdateTask() {
     return <div className="w-screen h-screen bg-slate-700 p-6 flex justify-center">
         <div className="w-[30%] space-y-4">
             <div className="flex justify-center relative mb-6">
-                <h1 className="font-bold text-white text-3xl text-center">Update Task</h1>
+                <TitleMain>Update Task</TitleMain>
 
                 <button onClick={() => navigate(-1)} className="bg-slate-400 rounded-md text-white p-1 absolute top-0 right-0">
                     <Undo2 />
@@ -25,9 +26,9 @@ function UpdateTask() {
             </div>
 
             <div className="bg-slate-500 flex flex-col p-6 rounded-md space-y-3">
-                <H1/>Title: {task.title}
+                <H1>Title: {task.title}</H1>
                 <Input type="text" placeholder="Write the modification: " value={titleInput} onChange={(e) => setTitle(e.target.value)}/>
-                <H1/>Description: {task.description}
+                <H1>Description: {task.description}</H1>
                 <Input type="text" placeholder="Write the modification: " value={descriptionInput} onChange={(e) => setDescription(e.target.value)}/>
                 <button onClick={() => {
 
