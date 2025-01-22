@@ -1,9 +1,9 @@
 import { Undo2 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom"
 import { useState } from "react";
-import Input from "../components/Input.jsx";
-import H1 from "../components/H1.jsx";
-import TitleMain from "../components/TitleMain.jsx";
+import Input from "../components/Input";
+import H1 from "../components/H1";
+import TitleMain from "../components/TitleMain";
 
 function UpdateTask() {
     const navigate = useNavigate();
